@@ -1,0 +1,43 @@
+<div class="header">
+    <h1>Hoja de Vida de Equipo</h1>
+</div>
+
+<p>
+    <b>Equipo:</b> <span th:text="${equipo.equipo}"></span><br></br>
+    <b>Marca:</b> <span th:text="${equipo.marca}"></span><br></br>
+    <b>Modelo:</b> <span th:text="${equipo.modelo}"></span><br></br>
+    <b>Serie:</b> <span th:text="${equipo.serie}"></span><br></br>
+    <b>Inventario:</b> <span th:text="${equipo.inventario}"></span>
+</p>
+
+<h2>Mantenimientos Preventivos</h2>
+<table>
+    <tr>
+        <th>Fecha</th>
+        <th>N° OT</th>
+        <th>Responsable</th>
+        <th>Tipo de Trabajo</th>
+    </tr>
+    <tr th:each="mantenimiento: ${equipo.mantenimientosPreventivos}">
+        <td th:text="${mantenimiento.fecha}"></td>
+        <td th:text="${mantenimiento.numeroOT}"></td>
+        <td th:text="${mantenimiento.responsable}"></td>
+        <td th:text="${mantenimiento.tipoDeTrabajo}"></td>
+    </tr>
+</table>
+
+<h2>Mantenimientos Correctivos</h2>
+<table>
+    <tr>
+        <th>Fecha</th>
+        <th>N° OT</th>
+        <th>Responsable</th>
+        <th>Tipo de Trabajo</th>
+    </tr>
+    <tr th:each="mantenimiento: ${equipo.mantenimientosCorrectivos}">
+        <td th:text="${mantenimiento.fecha}"></td>
+        <td th:text="${mantenimiento.numeroOT}"></td>
+        <td th:text="${mantenimiento.responsable}"></td>
+        <td th:text="${mantenimiento.tipoDeTrabajo}"></td>
+    </tr>
+</table>
